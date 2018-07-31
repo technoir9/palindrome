@@ -45,13 +45,7 @@ function Phrase(content) {
 
   // Returns the letters in the content
   this.letters = function letters() {
-    let theLetters = [];
-    for (let i = 0; i < this.content.length; i++) {
-      if (this.content[i].match(/[a-zA-Z]/)) {
-        theLetters.push(this.content[i]);
-      }
-    }
-    return theLetters.join("");
+    return Array.from(this.content).filter(c => c.match(/[a-z]/i)).join("");
   }
 }
 
