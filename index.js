@@ -30,7 +30,7 @@ function Phrase(content) {
 
   // Returns content processed for palindrome testing
   this.processedContent = function processedContent() {
-    return this.processor(this.content);
+    return this.processor(this.letters());
   }
 
   // Returns true if the phrase is a palindrome, false otherwise
@@ -45,7 +45,13 @@ function Phrase(content) {
 
   // Returns the letters in the content
   this.letters = function letters() {
-    return this.content;    // stub return value
+    let theLetters = [];
+    for (let i = 0; i < this.content.length; i++) {
+      if (this.content[i].match(/[a-zA-Z]/)) {
+        theLetters.push(this.content[i]);
+      }
+    }
+    return theLetters.join("");
   }
 }
 
