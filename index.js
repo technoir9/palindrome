@@ -1,3 +1,5 @@
+module.exports = Phrase;
+
 // Add 'reverse' method to all strings
 String.prototype.reverse = function() {
   return Array.from(this).reverse().join("");
@@ -39,6 +41,11 @@ function Phrase(content) {
   // Returns all-caps version of the content
   this.louder = function() {
     return this.content.toUpperCase();
+  }
+
+  // Returns the letters in the content
+  this.letters = function letters() {
+    return this.content;    // stub return value
   }
 }
 
